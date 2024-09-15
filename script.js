@@ -30,4 +30,3 @@ function actualizarCarrito() {
 
 // Actualizamos el contador del carrito al cargar la página
 actualizarCarrito();
-
