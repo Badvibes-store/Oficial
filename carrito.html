@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
 </head>
 <body>
     <header>
-        <h1>Tu Carrito de Compras</h1>
         <nav>
-            <ul class="nav-right">
+            <ul class="nav-left">
                 <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="productos.html">Productos</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i><span id="carrito-count">0</span></a></li>
             </ul>
         </nav>
     </header>
+
     <section id="carrito">
+        <h2>Carrito de Compras</h2>
         <div id="carrito-items">
-            <!-- Los artículos del carrito se agregarán aquí mediante JavaScript -->
+            <!-- Los productos del carrito se llenarán aquí con JavaScript -->
         </div>
-        <button id="comprar-btn">Comprar</button>
+        <button id="comprar-btn" style="display: none;">Comprar</button>
     </section>
+
     <footer>
-        <p>&copy; 2024 Bad Vibes Store</p>
+        <p>&copy; 2024 Bad Vibes Store. Todos los derechos reservados.</p>
     </footer>
-    <script src="carrito.js"></script>
+    <script src="carrito.js" defer></script>
 </body>
 </html>
