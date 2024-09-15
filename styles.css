@@ -1,220 +1,143 @@
-/* Estilos generales */
-html, body {
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Cabecera */
 header {
-    background-color: #EBEBEB;
-    color: #000000;
-    padding: 1em;
-    text-align: center;
-    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Navegación */
+header h1 {
+    margin: 0;
+}
+
 nav {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos a lo largo del espacio disponible */
-    align-items: center;
-    padding: 0 20px; /* Añade un poco de relleno a los lados */
 }
-
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
     margin: 0;
+    padding: 0;
     display: flex;
 }
 
-nav ul.nav-left {
-    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
+nav ul li {
+    margin-right: 20px;
 }
 
-nav ul.nav-left li {
-    margin-left: 20px; /* Espacio entre los elementos del menú */
-}
-
-nav ul.nav-left li a {
-    padding: 14px 20px;
-    text-decoration: none;
-    color: black; /* Color negro para los enlaces */
-}
-
-
-nav ul.nav-left li a:hover {
-    background-color: #111;
-    color: white; /* Cambia el color del texto al pasar el ratón */
-}
-
-nav ul.nav-right {
-    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
-}
-
-nav ul.nav-right li {
-    margin-right: 20px; /* Espacio entre los elementos del menú */
-}
-
-
-/* Estilos para el ícono de la casa */
-nav ul.nav-right li a i.fas.fa-home {
-    color: black; /* Color negro para el ícono de la casa */
-    font-size: 24px; /* Tamaño del ícono */
-}
-
-
-nav ul.nav-right li a {
-    display: flex;
-    align-items: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    color: black; /* Color negro para el texto del carrito */
-}
-
-/* Ajustar el ícono del carrito */
-nav ul.nav-right i {
-    font-size: 24px; /* Tamaño del ícono */
-    margin-right: 8px; /* Espacio entre el ícono y el número del carrito */
-}
-
-#carrito-count {
-    font-size: 16px; /* Tamaño del número del carrito */
-    background-color: #000000;
+nav ul li a {
     color: white;
-    padding: 2px 6px;
-    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-/* Sección principal */
-section {
-    padding: 2em;
-    margin: 0 auto;
-    max-width: 100%;
-    box-sizing: border-box;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Estilo para los productos */
-.producto {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
+/* Estilos del Carrito */
+#carrito {
+    padding: 20px;
 }
 
-.producto img {
-    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-    height: auto;
+#carrito-items {
+    margin-bottom: 20px;
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-/* Estilos específicos para la página del carrito */
 #carrito-items div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #carrito-items img {
-    margin-right: 10px;
     vertical-align: middle;
-    width: 100px;
 }
 
 #carrito-items p {
+    display: inline;
     margin: 0;
-    font-size: 18px;
+    padding-left: 10px;
 }
 
-#comprar-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#comprar-btn:hover {
-    background-color: #000000;
-}
-
-/* Estilo para los botones de quitar artículo (color rojo) */
+/* Botón Quitar */
 .remove-item {
-    background-color: #dc3545; /* Rojo */
+    background-color: red;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    margin-left: 15px; /* Añade espacio entre el texto del producto y el botón */
-    transition: background-color 0.3s ease;
 }
 
 .remove-item:hover {
-    background-color: #c82333; /* Rojo más oscuro al hacer hover */
+    background-color: darkred;
 }
 
-/* Estilos del pie de página */
+/* Botón Comprar */
+#comprar-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#comprar-btn:hover {
+    background-color: darkgreen;
+}
+
+/* Sección de Productos */
+#productos {
+    padding: 20px;
+}
+
+.producto {
+    margin-bottom: 20px;
+}
+
+.producto img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Botón Añadir al Carrito */
+.add-to-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Esconder Secciones */
+.hidden {
+    display: none;
+}
+
+/* Pie de Página */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 1em;
-    background-color: #EBEBEB;
-    color: #000000;
-    position: relative;
-    width: 100%;
+    padding: 10px 0;
+    position: fixed;
     bottom: 0;
-}
-
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 768px) {
-    nav ul {
-        text-align: center;
-    }
-
-    nav ul.nav-left,
-    nav ul.nav-right {
-        margin: 0;
-    }
-
-    nav ul.nav-left li,
-    nav ul.nav-right li {
-        display: inline-block;
-    }
-
-    .producto {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-/* Media Queries para pantallas muy pequeñas (móviles) */
-@media (max-width: 480px) {
-    #ver-productos-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    #carrito-items img {
-        width: 80px; /* Reducir tamaño de imagen en pantallas muy pequeñas */
-    }
+    width: 100%;
 }
