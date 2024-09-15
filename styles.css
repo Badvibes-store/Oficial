@@ -36,7 +36,7 @@ nav ul {
 }
 
 nav ul.nav-left {
-    margin-right: auto; /* Empuja la lista de la izquierda al inicio del contenedor flex */
+    margin-left: auto; /* Empuja la lista de la izquierda al final del contenedor flex */
 }
 
 nav ul.nav-left li {
@@ -54,7 +54,7 @@ nav ul.nav-left li a:hover {
 }
 
 nav ul.nav-right {
-    margin-left: auto; /* Empuja la lista de la derecha al final del contenedor flex */
+    margin-right: auto; /* Empuja la lista de la derecha al inicio del contenedor flex */
 }
 
 nav ul.nav-right li {
