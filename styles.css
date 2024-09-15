@@ -15,7 +15,7 @@ body {
 /* Cabecera */
 header {
     background-color: #EBEBEB;
-    color: white;
+    color: #000000;
     padding: 1em;
     text-align: center;
     width: 100%;
@@ -89,7 +89,7 @@ nav ul.nav-right i {
 
 #carrito-count {
     font-size: 16px; /* Tamaño del número del carrito */
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     padding: 2px 6px;
     border-radius: 12px;
@@ -179,7 +179,7 @@ footer {
     text-align: center;
     padding: 1em;
     background-color: #EBEBEB;
-    color: white;
+    color: #000000;
     position: relative;
     width: 100%;
     bottom: 0;
