@@ -25,7 +25,9 @@ botonesAñadir.forEach(boton => {
 // Actualiza el número de productos en el carrito
 function actualizarCarrito() {
     const carritoCount = document.getElementById('carrito-count');
-    carritoCount.textContent = carrito.length;
+    if (carritoCount) {
+        carritoCount.textContent = carrito.length;
+    }
 }
 
 // Actualizamos el contador del carrito al cargar la página
