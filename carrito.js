@@ -35,7 +35,7 @@ function actualizarCarrito() {
         productoDiv.innerHTML = `
             <img src="${item.imagen}" alt="${item.producto}" width="100">
             <p>${item.producto} - $${(item.precio * item.cantidad).toFixed(2)} (${item.cantidad}x)</p>
-            <button class="remove-item" data-product="${item.producto}">Quitar</button>
+            <button class="remove-item" data-product="${item.producto}">Quitar 1</button>
         `;
         carritoItems.appendChild(productoDiv);
     });
@@ -48,7 +48,15 @@ function actualizarCarrito() {
     botonesQuitar.forEach(boton => {
         boton.addEventListener('click', (e) => {
             const producto = e.target.getAttribute('data-product');
-            carrito = carrito.filter(item => item.producto !== producto);
+            // Encontrar el índice del primer producto del tipo seleccionado
+            const index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito[index].cantidad -= 1;
+                // Eliminar el producto del carrito si la cantidad llega a 0
+                if (carrito[index].cantidad <= 0) {
+                    carrito.splice(index, 1);
+                }
+            }
             localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizamos localStorage
             actualizarCarrito();
         });
