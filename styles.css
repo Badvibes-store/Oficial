@@ -1,112 +1,124 @@
-/* Estilos básicos para el cuerpo del documento */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    color: #333;
 }
 
-/* Estilos del encabezado */
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem;
     text-align: center;
-    position: relative;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header h1 {
+    margin: 0;
 }
 
-.nav-left, .nav-right {
+nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
 }
 
-.nav-right {
-    margin-left: auto;
+nav ul.nav-left {
+    float: left;
 }
 
-.nav-right li {
-    margin-left: 20px;
+nav ul.nav-right {
+    float: right;
 }
 
-a {
+nav ul li {
+    display: inline;
+    margin-left: 1rem;
+}
+
+nav a {
     color: #fff;
     text-decoration: none;
 }
 
-h1 {
-    margin: 0;
-}
-
-/* Estilos de la sección */
 section {
-    padding: 20px;
-    margin: 10px;
+    padding: 2rem;
 }
 
-/* Estilos de los productos */
 #productos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
 .producto {
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+    padding: 1rem;
     width: 200px;
+    text-align: center;
+    background: #f9f9f9;
 }
 
 .producto img {
     max-width: 100%;
-    border-radius: 5px;
+    height: auto;
 }
 
-.producto p {
-    margin: 10px 0;
-}
-
-/* Estilos de los botones */
-button.add-to-cart, button.remove-item, .go-to-home {
-    background-color: #007BFF;
+button {
+    background-color: #333;
     color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    font-size: 14px;
 }
 
-button.add-to-cart:hover, button.remove-item:hover, .go-to-home:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #555;
 }
 
-button.remove-item {
-    background-color: #dc3545;
+#carrito-items {
+    margin-top: 2rem;
 }
 
-button.remove-item:hover {
-    background-color: #c82333;
+.carrito-item {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
 }
 
-/* Estilos del pie de página */
+.carrito-item p {
+    margin: 0;
+}
+
+.carrito-item .quitar-item {
+    background-color: red;
+    border: none;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.carrito-item .quitar-item:hover {
+    background-color: darkred;
+}
+
+#vaciar-carrito-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#vaciar-carrito-btn:hover {
+    background-color: darkred;
+}
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem;
 }
+
 
 /* Estilo oculto */
 .hidden {
