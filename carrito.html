@@ -5,28 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="carrito.js" defer></script> <!-- Archivo separado para el manejo del carrito -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
     <header>
         <h1>Tu Carrito de Compras</h1>
-<nav>
-    <ul>
-        <li><a href="index.html"><i class="fas fa-shopping-cart"></i> Volver a la tienda</a></li>
-    </ul>
-</nav>
+        <nav>
+            <ul class="nav-right">
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            </ul>
+        </nav>
     </header>
-
     <section id="carrito">
-        <h2>Productos en el carrito</h2>
         <div id="carrito-items">
-            <p>Tu carrito está vacío.</p>
+            <!-- Los artículos del carrito se agregarán aquí mediante JavaScript -->
         </div>
-        <button id="comprar-btn" style="display: none;">Comprar</button> <!-- Solo aparece si hay productos en el carrito -->
+        <button id="comprar-btn">Comprar</button>
     </section>
-
     <footer>
-        <p>&copy; 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Tu Tienda de Ropa</p>
     </footer>
+    <script src="carrito.js"></script>
 </body>
 </html>
