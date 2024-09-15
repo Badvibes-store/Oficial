@@ -10,19 +10,31 @@ function actualizarCarrito() {
     // Limpiar la vista del carrito
     carritoItems.innerHTML = '';
 
+    // Agrupar productos por nombre
+    const productosAgrupados = carrito.reduce((acc, item) => {
+        if (!acc[item.producto]) {
+            acc[item.producto] = { ...item, cantidad: 1 };
+        } else {
+            acc[item.producto].cantidad += 1;
+        }
+        return acc;
+    }, {});
+
+    const productosArray = Object.values(productosAgrupados);
+
     // Si el carrito está vacío
-    if (carrito.length === 0) {
+    if (productosArray.length === 0) {
         carritoItems.innerHTML = '<p>Tu carrito está vacío.</p>';
         comprarBtn.style.display = 'none';
         return;
     }
 
     // Si hay productos en el carrito, los mostramos
-    carrito.forEach((item, index) => {
+    productosArray.forEach((item, index) => {
         const productoDiv = document.createElement('div');
         productoDiv.innerHTML = `
             <img src="${item.imagen}" alt="${item.producto}" width="100">
-            <p>${item.producto} - $${item.precio.toFixed(2)}</p>
+            <p>${item.producto} - $${(item.precio * item.cantidad).toFixed(2)} (${item.cantidad}x)</p>
             <button class="remove-item" data-index="${index}">Quitar</button>
         `;
         carritoItems.appendChild(productoDiv);
@@ -36,7 +48,7 @@ function actualizarCarrito() {
     botonesQuitar.forEach(boton => {
         boton.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
-            carrito.splice(index, 1);
+            carrito = carrito.filter((_, i) => i !== parseInt(index));
             localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizamos localStorage
             actualizarCarrito();
         });
