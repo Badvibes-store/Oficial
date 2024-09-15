@@ -1,58 +1,54 @@
+/* Configuración básica del cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
+/* Estilos del encabezado */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1em;
+    background-color: #ffffff;
+    padding: 20px;
     text-align: center;
+    border-bottom: 1px solid #eaeaea;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Navegación minimalista */
 nav ul {
-    list-style-type: none;
-    background-color: #444;
+    list-style: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
 }
 
 nav ul li {
-    float: left;
+    margin: 0;
 }
 
 nav ul li a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
     display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
-    background-color: #111;
+    background-color: #444;
 }
 
+/* Secciones */
 section {
-    padding: 2em;
-    margin: 2em auto;
-    max-width: 800px;
-}
+    padding: 40px 20px;
+    text
 
-.producto {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #333;
-    color: white;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
