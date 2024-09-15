@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Ropa</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Enlace al archivo de JavaScript -->
 </head>
 <body>
     <header>
-        <h1>Bienvenidos a Nuestra Tienda de Ropa</h1>
+        <h1>Tienda Minimalista</h1>
     </header>
 
     <nav>
@@ -21,18 +22,21 @@
 
     <section id="inicio">
         <h2>Nuestros Estilos Exclusivos</h2>
-        <p>Encuentra las últimas tendencias de moda para cualquier ocasión.</p>
+        <p>Descubre lo último en moda con un toque minimalista.</p>
+        <button id="verProductos">Ver Productos</button>
     </section>
 
-    <section id="productos">
+    <section id="productos" class="hidden"> <!-- Ocultar la sección hasta que se despliegue -->
         <h2>Productos Destacados</h2>
         <div class="producto">
-            <img src="https://via.placeholder.com/150" alt="Producto 1">
+            <img src="https://via.placeholder.com/150" alt="Camisa Casual">
             <p>Camisa Casual - $20</p>
+            <button class="btn-compra">Comprar</button>
         </div>
         <div class="producto">
-            <img src="https://via.placeholder.com/150" alt="Producto 2">
+            <img src="https://via.placeholder.com/150" alt="Vestido Elegante">
             <p>Vestido Elegante - $35</p>
+            <button class="btn-compra">Comprar</button>
         </div>
     </section>
 
@@ -43,7 +47,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Tienda Minimalista. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
