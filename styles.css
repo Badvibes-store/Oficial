@@ -1,12 +1,78 @@
-#carrito-items img {
-    margin-right: 10px;
-    vertical-align: middle;
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #444;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+section {
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+}
+
+/* Estilos para los productos */
+.producto {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilos específicos para la página del carrito */
 #carrito-items div {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+}
+
+#carrito-items img {
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 100px;
 }
 
 #carrito-items p {
@@ -14,6 +80,7 @@
     font-size: 18px;
 }
 
+/* Estilo para el botón de "Comprar" */
 #comprar-btn {
     background-color: #007bff;
     color: white;
@@ -25,4 +92,30 @@
 
 #comprar-btn:hover {
     background-color: #0056b3;
+}
+
+/* Estilo para los botones de quitar artículo (color rojo) */
+.remove-item {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 15px; /* Añade espacio entre el texto del producto y el botón */
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: #c82333; /* Rojo más oscuro al hacer hover */
+}
+
+/* Estilos del pie de página */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 }
