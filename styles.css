@@ -14,7 +14,7 @@ body {
 
 /* Cabecera */
 header {
-    background-color: #CECFCE;
+    background-color: #333;
     color: white;
     padding: 1em;
     text-align: center;
@@ -26,6 +26,7 @@ nav {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del espacio disponible */
     align-items: center;
+    padding: 0 20px; /* Añade un poco de relleno a los lados */
 }
 
 nav ul {
@@ -36,30 +37,30 @@ nav ul {
 }
 
 nav ul.nav-left {
-    margin-left: auto; /* Empuja la lista de la izquierda al final del contenedor flex */
+    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
 }
 
 nav ul.nav-left li {
-    float: none; /* Asegura que los elementos de la lista no floten */
+    margin-left: 20px; /* Espacio entre los elementos del menú */
 }
 
 nav ul.nav-left li a {
     padding: 14px 20px;
     text-decoration: none;
-    color:  #000000 ; /* Color negro para los enlaces */
+    color: black; /* Color negro para los enlaces */
 }
 
 nav ul.nav-left li a:hover {
-    background-color: #f4f4f4;
-    color: #000000 ; /* Cambia el color del texto al pasar el ratón */
+    background-color: #111;
+    color: white; /* Cambia el color del texto al pasar el ratón */
 }
 
 nav ul.nav-right {
-    margin-right: auto; /* Empuja la lista de la derecha al inicio del contenedor flex */
+    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
 }
 
 nav ul.nav-right li {
-    float: none;
+    margin-right: 20px; /* Espacio entre los elementos del menú */
 }
 
 nav ul.nav-right li a {
@@ -67,7 +68,7 @@ nav ul.nav-right li a {
     align-items: center;
     padding: 14px 20px;
     text-decoration: none;
-    color: #000000; /* Color negro para el texto del carrito */
+    color: black; /* Color negro para el texto del carrito */
 }
 
 /* Ajustar el ícono del carrito */
@@ -78,7 +79,7 @@ nav ul.nav-right i {
 
 #carrito-count {
     font-size: 16px; /* Tamaño del número del carrito */
-    background-color: #EBEBEB;
+    background-color: #007bff;
     color: white;
     padding: 2px 6px;
     border-radius: 12px;
@@ -167,7 +168,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #CECFCE;
+    background-color: #333;
     color: white;
     position: relative;
     width: 100%;
@@ -206,4 +207,10 @@ footer {
     #carrito-items img {
         width: 80px; /* Reducir tamaño de imagen en pantallas muy pequeñas */
     }
+}
+
+/* Estilos para el ícono de la casa */
+nav ul.nav-right li a i.fas.fa-home {
+    color: black; /* Color negro para el ícono de la casa */
+    font-size: 24px; /* Tamaño del ícono */
 }
