@@ -14,7 +14,7 @@ body {
 
 /* Cabecera */
 header {
-    background-color: #333;
+    background-color: #EBEBEB;
     color: white;
     padding: 1em;
     text-align: center;
@@ -178,7 +178,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #333;
+    background-color: #EBEBEB;
     color: white;
     position: relative;
     width: 100%;
