@@ -29,6 +29,7 @@ nav {
     padding: 0 20px; /* Añade un poco de relleno a los lados */
 }
 
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -50,6 +51,7 @@ nav ul.nav-left li a {
     color: black; /* Color negro para los enlaces */
 }
 
+
 nav ul.nav-left li a:hover {
     background-color: #111;
     color: white; /* Cambia el color del texto al pasar el ratón */
@@ -62,6 +64,14 @@ nav ul.nav-right {
 nav ul.nav-right li {
     margin-right: 20px; /* Espacio entre los elementos del menú */
 }
+
+
+/* Estilos para el ícono de la casa */
+nav ul.nav-right li a i.fas.fa-home {
+    color: black; /* Color negro para el ícono de la casa */
+    font-size: 24px; /* Tamaño del ícono */
+}
+
 
 nav ul.nav-right li a {
     display: flex;
@@ -207,10 +217,4 @@ footer {
     #carrito-items img {
         width: 80px; /* Reducir tamaño de imagen en pantallas muy pequeñas */
     }
-}
-
-/* Estilos para el ícono de la casa */
-nav ul.nav-right li a i.fas.fa-home {
-    color: black; /* Color negro para el ícono de la casa */
-    font-size: 24px; /* Tamaño del ícono */
 }
