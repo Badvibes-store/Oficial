@@ -46,11 +46,12 @@ nav ul.nav-left li {
 nav ul.nav-left li a {
     padding: 14px 20px;
     text-decoration: none;
-    color: white;
+    color: black; /* Color negro para los enlaces */
 }
 
 nav ul.nav-left li a:hover {
     background-color: #111;
+    color: white; /* Cambia el color del texto al pasar el ratón */
 }
 
 nav ul.nav-right {
@@ -66,7 +67,7 @@ nav ul.nav-right li a {
     align-items: center;
     padding: 14px 20px;
     text-decoration: none;
-    color: white;
+    color: black; /* Color negro para el texto del carrito */
 }
 
 /* Ajustar el ícono del carrito */
