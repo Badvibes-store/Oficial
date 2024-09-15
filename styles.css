@@ -51,7 +51,7 @@ nav ul.nav-left li a {
 
 nav ul.nav-left li a:hover {
     background-color: #f4f4f4;
-    color: #f4f4f4 ; /* Cambia el color del texto al pasar el ratón */
+    color: #000000 ; /* Cambia el color del texto al pasar el ratón */
 }
 
 nav ul.nav-right {
