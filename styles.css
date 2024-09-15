@@ -26,7 +26,6 @@ nav {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del espacio disponible */
     align-items: center;
-    padding: 0 20px; /* Añade un poco de relleno a los lados */
 }
 
 nav ul {
@@ -37,11 +36,11 @@ nav ul {
 }
 
 nav ul.nav-left {
-    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
+    margin-left: auto; /* Empuja la lista de la izquierda al final del contenedor flex */
 }
 
 nav ul.nav-left li {
-    margin-left: 20px; /* Espacio entre los elementos del menú */
+    float: none; /* Asegura que los elementos de la lista no floten */
 }
 
 nav ul.nav-left li a {
@@ -52,15 +51,15 @@ nav ul.nav-left li a {
 
 nav ul.nav-left li a:hover {
     background-color: #f4f4f4;
-    color: white; /* Cambia el color del texto al pasar el ratón */
+    color: #f4f4f4 ; /* Cambia el color del texto al pasar el ratón */
 }
 
 nav ul.nav-right {
-    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
+    margin-right: auto; /* Empuja la lista de la derecha al inicio del contenedor flex */
 }
 
 nav ul.nav-right li {
-    margin-right: 20px; /* Espacio entre los elementos del menú */
+    float: none;
 }
 
 nav ul.nav-right li a {
@@ -168,7 +167,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #333;
+    background-color: #CECFCE;
     color: white;
     position: relative;
     width: 100%;
