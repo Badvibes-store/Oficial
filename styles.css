@@ -22,27 +22,67 @@ header {
 }
 
 /* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del espacio disponible */
+    align-items: center;
+    padding: 0 20px; /* Añade un poco de relleno a los lados */
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
-    background-color: #444;
+    display: flex;
 }
 
-nav ul li {
-    float: left;
+nav ul.nav-left {
+    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
 }
 
-nav ul li a {
-    color: white;
+nav ul.nav-left li {
+    margin-left: 20px; /* Espacio entre los elementos del menú */
+}
+
+nav ul.nav-left li a {
     padding: 14px 20px;
     text-decoration: none;
-    display: block;
+    color: black; /* Color negro para los enlaces */
 }
 
-nav ul li a:hover {
+nav ul.nav-left li a:hover {
     background-color: #111;
+    color: white; /* Cambia el color del texto al pasar el ratón */
+}
+
+nav ul.nav-right {
+    display: flex; /* Alinea los elementos dentro de esta lista horizontalmente */
+}
+
+nav ul.nav-right li {
+    margin-right: 20px; /* Espacio entre los elementos del menú */
+}
+
+nav ul.nav-right li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: black; /* Color negro para el texto del carrito */
+}
+
+/* Ajustar el ícono del carrito */
+nav ul.nav-right i {
+    font-size: 24px; /* Tamaño del ícono */
+    margin-right: 8px; /* Espacio entre el ícono y el número del carrito */
+}
+
+#carrito-count {
+    font-size: 16px; /* Tamaño del número del carrito */
+    background-color: #007bff;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 12px;
 }
 
 /* Sección principal */
@@ -134,14 +174,20 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
         text-align: center;
     }
 
-    nav ul li {
-        float: none;
+    nav ul.nav-left,
+    nav ul.nav-right {
+        margin: 0;
+    }
+
+    nav ul.nav-left li,
+    nav ul.nav-right li {
         display: inline-block;
     }
 
@@ -161,4 +207,10 @@ footer {
     #carrito-items img {
         width: 80px; /* Reducir tamaño de imagen en pantallas muy pequeñas */
     }
+}
+
+/* Estilos para el ícono de la casa */
+nav ul.nav-right li a i.fas.fa-home {
+    color: black; /* Color negro para el ícono de la casa */
+    font-size: 24px; /* Tamaño del ícono */
 }
