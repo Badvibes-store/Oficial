@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #EBEBEB;
+    color: #000000;
     padding: 1rem;
     text-align: center;
 }
@@ -87,7 +87,7 @@ button:hover {
 }
 
 .carrito-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #000000;
     padding: 0.5rem 0;
 }
 
@@ -109,7 +109,7 @@ button:hover {
 }
 
 #vaciar-carrito-btn {
-    background-color: #ff0000;
+    background-color: #red;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -166,6 +166,6 @@ footer {
     background: none;
     border: none;
     font-size: 24px;
-    color: #000000;
+    color: #black;
     cursor: pointer;
 }
