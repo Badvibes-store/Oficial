@@ -1,62 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Cargar carrito desde el almacenamiento local
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+// Obtenemos el carrito del almacenamiento local
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    function actualizarCarrito() {
-        const carritoContenedor = document.getElementById('carrito-items');
-        const carritoTotal = document.getElementById('carrito-total');
-        carritoContenedor.innerHTML = ''; // Limpiar carrito
+// Seleccionamos los elementos del DOM
+const carritoItems = document.getElementById('carrito-items');
+const comprarBtn = document.getElementById('comprar-btn');
 
-        if (carrito.length === 0) {
-            carritoContenedor.innerHTML = '<p>El carrito está vacío.</p>';
-            carritoTotal.textContent = 'Total: $0 COP';
-            return;
-        }
+// Función para actualizar el contenido del carrito
+function actualizarCarrito() {
+    // Limpiar la vista del carrito
+    carritoItems.innerHTML = '';
 
-        let total = 0;
-
-        carrito.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'carrito-item';
-            div.innerHTML = `
-                <p>${item.producto} - $${item.precio} COP</p>
-                <button class="quitar-item" data-product="${item.producto}">Quitar 1</button>
-                <span class="cantidad">x${item.cantidad}</span>
-            `;
-            carritoContenedor.appendChild(div);
-            total += item.precio * item.cantidad;
-        });
-
-        carritoTotal.textContent = `Total: $${total} COP`;
-
-        // Guardar cambios en el almacenamiento local
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+    // Si el carrito está vacío
+    if (carrito.length === 0) {
+        carritoItems.innerHTML = '<p>Tu carrito está vacío.</p>';
+        comprarBtn.style.display = 'none';
+        return;
     }
 
-    // Manejar eventos de "Quitar 1"
-    document.getElementById('carrito-items').addEventListener('click', (event) => {
-        if (event.target.classList.contains('quitar-item')) {
-            const producto = event.target.getAttribute('data-product');
-
-            // Encontrar el índice del producto en el carrito
-            const index = carrito.findIndex(item => item.producto === producto);
-            if (index !== -1) {
-                carrito[index].cantidad--;
-
-                if (carrito[index].cantidad <= 0) {
-                    carrito.splice(index, 1); // Eliminar el producto si la cantidad es 0
-                }
-
-                actualizarCarrito(); // Actualizar carrito en la interfaz
-            }
-        }
+    // Si hay productos en el carrito, los mostramos
+    carrito.forEach((item, index) => {
+        const productoDiv = document.createElement('div');
+        productoDiv.innerHTML = 
+            <img src="${item.imagen}" alt="${item.producto}" width="100">
+            <p>${item.producto} - $${item.precio.toFixed(2)}</p>
+            <button class="remove-item" data-index="${index}">Quitar</button>
+        ;
+        carritoItems.appendChild(productoDiv);
     });
 
-    // Manejar el evento de "Vaciar carrito"
-    document.getElementById('vaciar-carrito-btn').addEventListener('click', () => {
-        localStorage.removeItem('carrito');
-        actualizarCarrito(); // Actualizar carrito en la interfaz
-    });
+    // Mostrar el botón de comprar si hay productos
+    comprarBtn.style.display = 'block';
 
-    actualizarCarrito(); // Inicializar carrito
+    // Añadir funcionalidad para quitar productos del carrito
+    const botonesQuitar = document.querySelectorAll('.remove-item');
+    botonesQuitar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizamos localStorage
+            actualizarCarrito();
+        });
+    });
+}
+
+// Manejamos el evento de "Comprar"
+comprarBtn.addEventListener('click', () => {
+    alert('Gracias por tu compra!');
+    carrito = [];  // Vaciamos el carrito
+    localStorage.removeItem('carrito');  // Limpiamos el almacenamiento local
+    actualizarCarrito();  // Actualizamos la vista del carrito
 });
+
+// Actualizamos el contenido del carrito al cargar la página
+actualizarCarrito();
